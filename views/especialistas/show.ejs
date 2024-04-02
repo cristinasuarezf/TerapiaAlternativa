@@ -1,0 +1,6 @@
+<h2 class="page-header"><%= especialista.name %></h2>
+<div class="btn-row">
+<a class="btn btn-primary" href="/especialistas/<%= especialista.id %>/edit">Editar</a>
+<%- include('../partials/deleteForm',
+            { url: `/especialistas/${especialista.id}` }) %>
+</div>

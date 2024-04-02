@@ -1,0 +1,21 @@
+<h2 class="page-header">Buscar Especialistas</h2>
+<form action="/especialistas" method="GET">
+<div class="form-row">
+  <div class="form-item">  
+  <label>Nombre</label>
+  <input type="text" name="name" value="<%= searchOptions.name %>">
+  <button class="btn btn-primary" type="submit">Buscar</button>
+  </div>
+</div>
+</form>
+<br>
+<% especialistas.forEach(especialista => { %>
+<div class="especialista-row">
+  <div class="especialista-name"><%= especialista.name %></div>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/especialistas/<%= especialista.id %>">Ver</a>
+    <a class="btn btn-primary" href="/especialistas/<%= especialista.id %>/edit">Editar</a>
+    <%- include('../partials/deleteForm',
+                { url: `/especialistas/${especialista.id}` }) %>
+  </div><br>
+<% }) %>
