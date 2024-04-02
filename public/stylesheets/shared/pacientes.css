@@ -1,0 +1,34 @@
+.paciente-details{
+    display: flex;
+}
+
+.paciente-details-label{
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.paciente-details-grid{
+    display: grid;
+    align-items: center;
+    align-content: flex-start;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.paciente-details-btn-grid{
+    display: grid;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    grid-template-areas: 
+            "edit delete"
+            "author author";
+    grid-gap: .5rem;
+    margin-top: .5rem;
+}
+
+.paciente-details-author-button{
+    grid-area: especialista;
+    justify-content: stretch;
+}
