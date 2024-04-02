@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Especialista = require('../models/especialista')
+const Paciente = require('../models/paciente')
 
 // All Especialistas Route
 router.get('/', async (req, res) => {
@@ -40,6 +41,19 @@ router.post('/', async (req, res) => {
   }
 })
 
+// Show Especialista Route
+router.get('/:id', async (req, res) => {
+  try {
+    const especialista = await Especialista.findById(req.params.id)
+    const pacientes = await Paciente.find({ especialista: especialista.id }).limit(6).exec()
+    res.render('especialistas/show', {
+      especialista: especialista,
+      pacientesByEspecialista: pacientes
+    })
+  } catch {
+    res.redirect('/')
+  }
+})
 
 // Edit Especialista Route
 router.get('/:id/edit', async (req, res) => {

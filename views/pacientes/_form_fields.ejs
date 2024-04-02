@@ -1,0 +1,38 @@
+<div class="form-row">
+  <div class="form-item">
+  <label>Nombre</label>
+  <input type="text" name="title" value="<%= paciente.title %>">
+</div>
+<br>
+<div class="form-item">
+  <label>Especialista</label>
+  <select name="especialista">
+  <% especialistas.forEach(especialista => { %>
+    <% if (especialista.id === paciente.especialista) { %>
+      <option selected label="<%= especialista.name %>" value="<%= especialista.id %>">
+    <% } else { %>
+      <option label="<%= especialista.name %>" value="<%= especialista.id %>">
+    <% } %>
+  <% }) %>
+  </select>
+</div>
+<br>
+</div>
+<div class="form-row">
+  <div class="form-item">
+    <label>Fecha Cita</label>
+    <input type="date" name="publishDate"
+          value="<%= paciente.publishDate == null ? '' : paciente.publishDate.toISOString().split('T')[0] %>">
+  </div>
+  <br>
+  <div class="form-item">
+    <label>Edad</label>
+    <input type="number" name="pageCount" min="1" value="<%= paciente.pageCount %>">
+  </div>
+</div>
+<br>
+<div class="form-row">
+<div class="form-item">
+  <label>Hora Cita</label>
+  <input type="text" name="description" value="<%= paciente.description %>">
+</div>

@@ -1,0 +1,37 @@
+<h2 class="page-header">Buscar Paciente</h2>
+<form action="/pacientes" method="GET">
+<div class="form-row">
+  <div class="form-item">
+    <label>Nombre</label>
+    <input type="text" name="title" value="<%= searchOptions.title %>">
+  </div>
+  </div>
+<br>
+<div class="form-row">
+    <div class="form-item">
+      <label>Citas después</label>
+      <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+    </div>
+    <br>
+
+    <div class="form-item">
+    <label>Citas antes</label>
+      <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+      <button class="btn btn-primary" type="submit">Buscar</button>
+
+    </div> 
+  </div>
+<br>
+</form>
+<br>
+<div>
+  <% pacientes.forEach(paciente => { %>
+    <div class="especialista-row">
+      <div><%= paciente.title %></div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/pacientes/<%= paciente.id %>">Ver</a>
+        <a class="btn btn-primary" href="/pacientes/<%= paciente.id %>/edit">Editar</a>
+        <%- include('../partials/deleteForm',
+                    { url: `/pacientes/${paciente.id}` }) %>
+      </div><br>
+<% }) %>

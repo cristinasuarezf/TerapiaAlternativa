@@ -1,0 +1,13 @@
+<h2 class="page-header"><%= paciente.title %></h2>
+
+<div>Especialista: <%= paciente.especialista.name %></div><br>
+<div>Fecha Cita: <%= paciente.publishDate.toDateString() %></div> <br>
+<div>Edad: <%= paciente.pageCount %></div><br>
+<div>Hora Cita: <%= paciente.description %></div> <br>         
+
+<div class="btn-row">
+  <a class="btn btn-primary"  href="/pacientes/<%= paciente.id %>/edit">Editar</a>
+  <%- include('../partials/deleteForm', { url: `/pacientes/${paciente.id}` }) %>
+  <a class="btn btn-primary" href="/especialistas/<%= paciente.especialista.id %>">Ver Especialista</a>
+  </div>
+    
