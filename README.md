@@ -1,5 +1,6 @@
 # terapiaAlternativa
 Materia: Programación Web Back End
+Fecha: Diciembre 2023
 
 ### Se tiene que instalar :
 - npm init
