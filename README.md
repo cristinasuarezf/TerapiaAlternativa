@@ -10,3 +10,5 @@ Materia: Programación Web Back End
 ### Deploy en Huroku desde GitHub
 - https://terapiaalternativa-pwbe-92ce1432f867.herokuapp.com
 - En la página trabaja con mongoDB Atlas
+
+### Node, Express, MongoDB, javaScript
